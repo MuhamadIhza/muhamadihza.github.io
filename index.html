@@ -3,123 +3,304 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Muhamad Ihza — IT Business Analyst & Odoo Consultant</title>
-<meta name="description" content="Muhamad Ihza Faida Akbar — IT Business Analyst and Odoo functional consultant, supporting implementations from A to Z across industries. Former product manager.">
-<meta property="og:title" content="Muhamad Ihza — IT Business Analyst & Odoo Consultant">
-<meta property="og:description" content="I help businesses run on Odoo, from the first workshop to go-live. Before that, I shipped product.">
+<title>Muhamad Ihza — Business Analyst & Product Specialist, Odoo ERP</title>
+<meta name="description" content="Muhamad Ihza Faida Akbar — Business Analyst and Product Specialist. 30+ Odoo ERP implementations across industries, Odoo 18 & 19 Functional Certified, former Product Manager at Evermos and Pinhome.">
+<meta property="og:title" content="Muhamad Ihza — Business Analyst & Product Specialist">
+<meta property="og:description" content="Escalate your product and business into digitalization that fits. 30+ Odoo implementations, Odoo 18 & 19 certified, ex-Product Manager.">
 <meta name="theme-color" content="#f4f2ec">
-<link rel="preload" as="image" href="ihza.webp?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=5">
+<style>
+:root{
+  --bg:#f4f2ec; --bg2:#ebe8de; --card:#fbfaf6; --ink:#0f1a16; --ink2:#46524d; --ink3:#86918c; --line:#dcd8cb;
+  --green:#0e6e55; --deep:#0a3a2e; --mint:#4fc8a4; --amber:#e2a84f;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif","Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ol,ul,dl,dd{margin:0;padding:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:6px}
+em{font-family:var(--serif);font-style:italic;font-weight:400}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
+.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);display:inline-flex;gap:8px}
+.label::before{content:"["}.label::after{content:"]"}
+.label.light{color:rgba(244,242,236,.6)}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--green);transform-origin:0 50%;transform:scaleX(0);z-index:40}
+
+/* nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:28px;padding:8px 8px 8px 20px;border-radius:999px;
+  background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border:1px solid rgba(15,26,22,.08);box-shadow:0 10px 30px -18px rgba(15,26,22,.35);max-width:calc(100vw - 24px)}
+.brand{font-weight:700;text-decoration:none;font-size:.95rem;letter-spacing:-.02em;white-space:nowrap}
+.brand span{color:var(--green)}
+.nav nav{display:flex;align-items:center;gap:20px}
+.nav nav a{text-decoration:none;color:var(--ink2);font-size:.88rem;font-weight:500;white-space:nowrap}
+.nav nav a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink);color:#fff!important;padding:8px 16px;border-radius:999px}
+@media (max-width:680px){.hide-sm{display:none}.nav{gap:14px}.nav nav{gap:14px}}
+
+/* buttons */
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font:inherit;font-weight:600;font-size:.94rem;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;align-items:center;padding-top:120px;padding-bottom:40px;min-height:min(860px,100vh)}
+.who{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.avatar{width:72px;height:72px;border-radius:50%;flex:none;background:var(--mint) url("ihza.webp") no-repeat;background-size:240% auto;background-position:48% 0;border:3px solid #fff;box-shadow:0 8px 22px -10px rgba(15,26,22,.5)}
+.name{font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+.role{color:var(--ink2);font-size:.92rem}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.6rem);font-weight:700;letter-spacing:-.045em;line-height:1.02;max-width:15ch}
+.hero h1 em{color:var(--green);font-size:1.08em;letter-spacing:-.02em}
+.lede{color:var(--ink2);font-size:1.08rem;max-width:56ch;margin:24px 0 32px}
+.hero-art{position:relative;aspect-ratio:1/1;width:100%;max-width:520px;justify-self:end}
+.hero-art canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-art::before{content:"";position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(79,200,164,.28),rgba(79,200,164,0) 68%)}
+.badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:.82rem;font-weight:600;box-shadow:0 12px 28px -14px rgba(15,26,22,.4);white-space:nowrap;animation:float 6s ease-in-out infinite}
+.b1{left:0;top:16%}
+.b2{right:2%;bottom:14%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-8px)}}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:100px;min-height:0}
+  .hero-art{justify-self:center;max-width:360px;margin-top:8px}
+}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats>div{padding:28px 20px 28px 0}
+.stats>div+div{padding-left:24px;border-left:1px solid var(--line)}
+.stats dt{font-family:var(--serif);font-size:clamp(2.2rem,3.6vw,3rem);line-height:1;letter-spacing:-.02em}
+.stats dd{color:var(--ink2);font-size:.88rem;margin-top:8px;max-width:22ch}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats>div:nth-child(3){padding-left:0;border-left:0}.stats>div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* sections */
+.sec{padding:110px 0 0}
+.sec.tight{padding-bottom:110px}
+.sec-head{max-width:680px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2.1rem,4.2vw,3.4rem);font-weight:700;letter-spacing:-.04em;line-height:1.04;margin-top:12px}
+.sub{color:var(--ink2);margin-top:14px;font-size:1.04rem}
+
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:1000px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}}
+.pillars article{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,box-shadow .3s}
+.pillars article:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(15,26,22,.4)}
+.ic{font-family:var(--mono);font-size:.74rem;color:var(--green)}
+.pillars h3{font-size:1.3rem;font-weight:700;letter-spacing:-.02em}
+.pillars p{color:var(--ink2);font-size:.95rem}
+.pillars ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.pillars li{font-size:.78rem;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:#fff}
+
+/* dark A–Z */
+.sec.dark{background:var(--deep);color:var(--bg);margin-top:110px;padding:100px 0 100px}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;counter-reset:s}
+@media (max-width:980px){.steps{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:1fr 1fr}}
+.steps li{border:1px solid rgba(244,242,236,.16);border-radius:16px;padding:18px;background:rgba(255,255,255,.03)}
+.steps span{font-family:var(--mono);font-size:.72rem;color:var(--mint)}
+.steps b{display:block;font-family:var(--serif);font-weight:400;font-size:1.6rem;margin:4px 0 6px;letter-spacing:-.01em}
+.steps p{font-size:.88rem;color:rgba(244,242,236,.72);line-height:1.45}
+.industries{margin-top:56px}
+.industries ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.industries li{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);border:1px solid rgba(244,242,236,.2);border-radius:999px;padding:6px 20px;line-height:1.3}
+
+/* impact */
+.impact{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media (max-width:1000px){.impact{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.impact{grid-template-columns:1fr 1fr}}
+.impact article{border-top:2px solid var(--ink);padding-top:16px}
+.co{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.big{font-weight:800;font-size:clamp(2.6rem,4.4vw,3.6rem);letter-spacing:-.05em;color:var(--green);line-height:1.05;margin:6px 0 8px}
+.impact p:last-child{color:var(--ink2);font-size:.92rem}
+
+/* experience */
+.timeline{border-top:1px solid var(--line)}
+.tl{display:grid;grid-template-columns:190px 1fr;gap:24px;padding-block:26px;border-bottom:1px solid var(--line)}
+.when{font-family:var(--mono);font-size:.8rem;color:var(--ink3);padding-top:6px}
+.tl h3{font-size:1.3rem;font-weight:700;letter-spacing:-.02em}
+.tl h3 small{font-weight:500;font-size:.92rem;color:var(--green);margin-left:8px;letter-spacing:0}
+.tl ul{margin-top:10px;padding-left:18px;color:var(--ink2);display:grid;gap:4px;max-width:72ch}
+.tl p{color:var(--ink2);margin-top:6px}
+.edu{margin-top:48px}
+.edu .label{margin-bottom:12px}
+.edu .tl{border-top:1px solid var(--line)}
+@media (max-width:720px){.tl{grid-template-columns:1fr;gap:4px}.tl h3 small{display:block;margin:2px 0 0}}
+
+/* certifications */
+.odoo-certs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+@media (max-width:760px){.odoo-certs{grid-template-columns:1fr}}
+.oc{display:flex;gap:20px;align-items:center;background:var(--ink);color:var(--bg);border-radius:20px;padding:24px}
+.seal{flex:none;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--ink);font-family:var(--serif);font-size:2.2rem;box-shadow:inset 0 0 0 6px rgba(255,255,255,.35)}
+.oc h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+.oc p{color:rgba(244,242,236,.7);font-size:.86rem;margin:4px 0 8px}
+.oc a{color:var(--mint);font-size:.86rem;font-weight:600;text-decoration:none}
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:1000px){.certs{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.certs{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.certs{grid-template-columns:1fr}}
+.cert{display:flex;flex-direction:column;gap:4px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 10px 14px;transition:transform .3s,box-shadow .3s}
+a.cert:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(15,26,22,.4)}
+.cert img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:10px;border:1px solid var(--line);margin-bottom:8px;background:#fff}
+.cert b{font-size:.95rem;padding:0 4px;letter-spacing:-.01em}
+.cert span{font-size:.8rem;color:var(--ink3);padding:0 4px}
+
+/* skills */
+.kit{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+@media (max-width:860px){.kit{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.kit{grid-template-columns:1fr}}
+.kit h3{font-size:.95rem;font-weight:700;margin-bottom:12px}
+.kit ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.kit li{font-size:.84rem;color:var(--ink2);background:#fff;border:1px solid var(--line);padding:4px 11px;border-radius:999px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);padding:110px 0 40px}
+.contact h2{font-size:clamp(2.3rem,5.4vw,4.6rem);font-weight:700;letter-spacing:-.045em;line-height:1;max-width:16ch;margin:16px 0 40px}
+.contact h2 em{color:var(--mint);font-size:1.08em}
+.email{font-family:var(--mono);font-size:.95rem;padding:11px 18px;border:1px solid rgba(244,242,236,.2);border-radius:999px;user-select:all}
+.btn.light{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--bg);border-color:rgba(244,242,236,.25)}
+.foot{margin-top:100px;color:rgba(244,242,236,.5);font-size:.85rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#fff;color:var(--ink);padding:9px 16px;border-radius:999px;font-size:.88rem;z-index:50}
+
+/* reveal (JS adds .js to html) */
+.js [data-r]{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js [data-r].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js [data-r]{opacity:1;transform:none;transition:none}
+  .badge{animation:none}
+}
+
+</style>
 </head>
 <body>
-
-<canvas id="gl" aria-hidden="true"></canvas>
-<div id="flood" aria-hidden="true"></div>
 <div class="progress" id="progress"></div>
 
-<header class="nav" id="nav">
+<header class="nav">
   <a class="brand" href="#top">Muhamad Ihza<span>.</span></a>
   <nav aria-label="Main">
-    <a href="#journey">A–Z</a>
-    <a href="#product">Product</a>
-    <a href="#experience" class="hide-sm">Experience</a>
+    <a href="#services" class="hide-sm">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications" class="hide-sm">Certifications</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </nav>
 </header>
 
 <main id="top">
 
-  <!-- ============ HERO: layers split into 3D on scroll ============ -->
-  <section class="pin hero-pin" id="hero">
-    <div class="stage hero-stage">
-      <div class="scene">
-        <div class="stack" id="stack">
-          <div class="layer l-plate">
-            <span class="tag tag-a">01 · Odoo ERP</span>
-          </div>
-          <div class="layer l-type">
-            <h1 aria-label="Muhamad Ihza"><span>MUHAMAD</span><span class="g">IHZA</span></h1>
-            <span class="tag tag-b">02 · Business analysis</span>
-          </div>
-          <div class="layer l-ui" aria-hidden="true">
-            <div class="ui-bar"><i></i><i></i><i></i><b>Implementation</b></div>
-            <ul class="ui-rows">
-              <li><span>Discovery</span><em style="--w:100%"></em></li>
-              <li><span>Fit-gap</span><em style="--w:100%"></em></li>
-              <li><span>Configure</span><em style="--w:100%"></em></li>
-              <li><span>UAT</span><em style="--w:72%"></em></li>
-              <li><span>Go-live</span><em style="--w:38%"></em></li>
-            </ul>
-            <span class="tag tag-c">03 · Product thinking</span>
-          </div>
+  <!-- ============ HERO ============ -->
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <div class="who" data-r>
+        <div class="avatar" role="img" aria-label="Portrait of Muhamad Ihza"></div>
+        <div>
+          <p class="name">Muhamad Ihza</p>
+          <p class="role">Business Analyst &amp; Product Specialist · Odoo ERP</p>
         </div>
       </div>
-
-      <div class="hero-meta" id="heroMeta">
-        <div class="who">
-          <div class="avatar" role="img" aria-label="Portrait of Muhamad Ihza"></div>
-          <p class="roles"><b>IT Business Analyst</b> · Odoo Functional Consultant<br><span>Former Product Manager · Bandung, ID</span></p>
-        </div>
-        <p class="lede">I support businesses on Odoo from A to Z, from the first workshop to go-live, across very different industries.</p>
+      <h1 data-r>Escalate your product and business into <em>digitalization that fits.</em></h1>
+      <p class="lede" data-r>I've handled 30+ Odoo ERP implementations end to end, including projects for Odoo partners, across very different industries. Before ERP, I spent three years as a product manager at Pinhome and Evermos, so I scope systems around business outcomes, not just features.</p>
+      <div class="cta-row" data-r>
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/muhamadihza" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <p class="cue" id="cue"><span></span>Scroll</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <canvas id="gl"></canvas>
+      <div class="badge b1">Odoo 19 Certified</div>
+      <div class="badge b2">30+ implementations</div>
     </div>
   </section>
 
-  <!-- ============ JOURNEY: A to Z, object assembles ============ -->
-  <section class="pin journey-pin" id="journey">
-    <div class="stage j-stage">
-      <div class="j-wrap">
-        <p class="label">From A to Z</p>
-        <h2>One person across the whole implementation, <em>start to finish.</em></h2>
-        <ol class="j-steps" id="jSteps">
-          <li class="on"><div class="hd"><span class="n">01</span><b>Discovery</b></div><div class="dd"><p>Workshops by function to separate real needs from old habits, then map how the business actually runs.</p></div></li>
-          <li><div class="hd"><span class="n">02</span><b>Fit-gap</b></div><div class="dd"><p>Standard first. Customize only when it pays for itself, and say so when it doesn't.</p></div></li>
-          <li><div class="hd"><span class="n">03</span><b>Configure</b></div><div class="dd"><p>Set up modules, workflows and documents so the system matches the process, not the other way around.</p></div></li>
-          <li><div class="hd"><span class="n">04</span><b>Migrate</b></div><div class="dd"><p>Clean master data with a change log, so every merge and rename can be explained later.</p></div></li>
-          <li><div class="hd"><span class="n">05</span><b>UAT</b></div><div class="dd"><p>Scenario-based testing per process, with evidence and a sign-off the client can stand behind.</p></div></li>
-          <li><div class="hd"><span class="n">06</span><b>Go-live</b></div><div class="dd"><p>Cutover, training and hypercare, until users stop needing me.</p></div></li>
-        </ol>
+  <section class="wrap">
+    <dl class="stats" data-r>
+      <div><dt><span data-count="30">30</span>+</dt><dd>Odoo implementations, including partner projects</dd></div>
+      <div><dt>v18 · v19</dt><dd>Odoo Functional Certified</dd></div>
+      <div><dt><span data-count="3">3</span>+ yrs</dt><dd>product management at Pinhome &amp; Evermos</dd></div>
+      <div><dt><span data-count="7">7</span>+</dt><dd>industries supported</dd></div>
+    </dl>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head" data-r>
+        <p class="label">What I do</p>
+        <h2>Where business, product and ERP meet.</h2>
+        <p class="sub">I sit between the people who run the business and the people who build the system, and make sure both end up with the same thing.</p>
       </div>
-      <div class="j-count"><b id="jNum">01</b> / 06</div>
+      <div class="pillars">
+        <article data-r>
+          <span class="ic">01</span>
+          <h3>Business analysis</h3>
+          <p>Map how the business actually runs, separate real needs from old habits, and turn them into clear requirements and a fit-gap everyone signs.</p>
+          <ul><li>Process mapping (BPMN)</li><li>Fit-gap analysis</li><li>BRD / FSD</li></ul>
+        </article>
+        <article data-r>
+          <span class="ic">02</span>
+          <h3>ERP implementation</h3>
+          <p>Lead Odoo projects from A to Z: configuration, data migration, UAT, go-live and hypercare, plus major version upgrades.</p>
+          <ul><li>Odoo 16 → 19/20</li><li>Data migration</li><li>UAT &amp; go-live</li></ul>
+        </article>
+        <article data-r>
+          <span class="ic">03</span>
+          <h3>Product specialist</h3>
+          <p>Think like a PM about the system: prioritize what moves the numbers, define success metrics, and keep scope tied to outcomes.</p>
+          <ul><li>Roadmapping &amp; PRD</li><li>Metrics &amp; data</li><li>Agile delivery</li></ul>
+        </article>
+        <article data-r>
+          <span class="ic">04</span>
+          <h3>Enablement</h3>
+          <p>Train users and mentor new Odoo partners on implementation methodology, so the system keeps working after go-live.</p>
+          <ul><li>User training &amp; SOPs</li><li>Partner mentoring</li><li>Change management</li></ul>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- ============ INDUSTRIES ============ -->
-  <section class="band" id="industries">
-    <p class="label light">Industries supported</p>
-    <div class="marquee" aria-label="Distribution, pharmaceutical, garment and fashion, food and beverage, automotive and motorsport, manufacturing, e-commerce">
-      <div class="track">
-        <span>Distribution</span><i></i><span>Pharmaceutical</span><i></i><span>Garment &amp; fashion</span><i></i><span>Food &amp; beverage</span><i></i><span>Automotive &amp; motorsport</span><i></i><span>Manufacturing</span><i></i><span>E-commerce</span><i></i>
-        <span aria-hidden="true">Distribution</span><i></i><span aria-hidden="true">Pharmaceutical</span><i></i><span aria-hidden="true">Garment &amp; fashion</span><i></i><span aria-hidden="true">Food &amp; beverage</span><i></i><span aria-hidden="true">Automotive &amp; motorsport</span><i></i><span aria-hidden="true">Manufacturing</span><i></i><span aria-hidden="true">E-commerce</span><i></i>
+  <!-- ============ A–Z ============ -->
+  <section class="sec dark" id="process">
+    <div class="wrap">
+      <div class="sec-head" data-r>
+        <p class="label light">From A to Z</p>
+        <h2>One person across the whole implementation.</h2>
+      </div>
+      <ol class="steps">
+        <li data-r><span>01</span><b>Discovery</b><p>Workshops by function and as-is process maps.</p></li>
+        <li data-r><span>02</span><b>Fit-gap</b><p>Standard first; customize only when it pays.</p></li>
+        <li data-r><span>03</span><b>Configure</b><p>Modules, workflows, documents and reports.</p></li>
+        <li data-r><span>04</span><b>Migrate</b><p>Clean master data with a reviewable change log.</p></li>
+        <li data-r><span>05</span><b>UAT</b><p>Scenario testing with evidence and sign-off.</p></li>
+        <li data-r><span>06</span><b>Go-live</b><p>Cutover, training and hypercare.</p></li>
+      </ol>
+      <div class="industries" data-r>
+        <p class="label light">Industries supported</p>
+        <ul>
+          <li>Distribution &amp; trading</li><li>Pharmaceutical</li><li>Garment &amp; fashion</li><li>Food &amp; beverage</li><li>Automotive &amp; motorsport</li><li>Manufacturing</li><li>Retail &amp; e-commerce</li>
+        </ul>
       </div>
     </div>
-    <ul class="facts">
-      <li><b>5–8</b><span>implementations in parallel</span></li>
-      <li><b>16 → 20</b><span>Odoo versions covered</span></li>
-      <li><b>New &amp; upgrade</b><span>fresh builds and major version jumps</span></li>
-    </ul>
   </section>
 
-  <!-- ============ PRODUCT: horizontal impact ============ -->
-  <section class="pin product-pin" id="product">
-    <div class="stage p-stage">
-      <div class="p-head">
-        <p class="label">Before ERP</p>
-        <h2>I also <em>shipped product.</em></h2>
-        <p class="sub">3+ years as Associate Product Manager at Evermos and Pinhome. It's why I scope ERP work around outcomes, not just features.</p>
-        <div class="dots" id="pDots"><i class="on"></i><i></i><i></i><i></i></div>
+  <!-- ============ PRODUCT IMPACT ============ -->
+  <section class="sec" id="product">
+    <div class="wrap">
+      <div class="sec-head" data-r>
+        <p class="label">Product track record</p>
+        <h2>Before ERP, I shipped product.</h2>
+        <p class="sub">Associate Product Manager at Evermos and Pinhome: leading cross-functional teams from research and PRD to release and metrics monitoring.</p>
       </div>
-      <div class="p-view">
-        <div class="p-track" id="pTrack">
-          <article class="slide on"><p class="who">Evermos · Shipping subsidy</p><div class="big"><span data-val="2" data-pre="" data-suf="×">2×</span></div><p>GMV and active resellers for orders outside Java, after launching a subsidy that adjusts shipping cost by region.</p></article>
-          <article class="slide"><p class="who">Evermos · Gamified sharing</p><div class="big"><span data-val="20" data-pre="+" data-suf="%">+20%</span></div><p>More shares per reseller, from a gamified sharing feature alongside direct discounts for resellers.</p></article>
-          <article class="slide"><p class="who">Pinhome · Order add-ons</p><div class="big"><span data-val="15" data-pre="+" data-suf="%">+15%</span></div><p>Average GTV per order from add-ons in the order flow. Two new services, Deep Cleaning and Glam, reached about 400 orders a month.</p></article>
-          <article class="slide"><p class="who">Pinhome · Payments</p><div class="big"><span data-val="45" data-pre="~" data-suf="%">~45%</span></div><p>Adoption of virtual-account payment, shipped together with in-app tipping for service partners.</p></article>
-        </div>
+      <div class="impact">
+        <article data-r><p class="co">Evermos · Shipping subsidy</p><p class="big">2×</p><p>Active resellers and GMV growth outside Java, from a shipping subsidy program.</p></article>
+        <article data-r><p class="co">Evermos · Gamification</p><p class="big">+20%</p><p>Reseller shares, after launching progress-bar gamification.</p></article>
+        <article data-r><p class="co">Pinhome · Order add-ons</p><p class="big">~15%</p><p>Higher average GTV per order on services with add-ons.</p></article>
+        <article data-r><p class="co">Pinhome · New services</p><p class="big">~400</p><p>Completed orders a month on the new Deep Cleaning and Glam services.</p></article>
+        <article data-r><p class="co">Pinhome · Payments</p><p class="big">~45%</p><p>Adoption of virtual-account payment in home service transactions.</p></article>
       </div>
     </div>
   </section>
@@ -127,26 +308,68 @@
   <!-- ============ EXPERIENCE ============ -->
   <section class="sec" id="experience">
     <div class="wrap">
-      <div class="sec-head"><p class="label">Experience</p><h2>Where I've worked</h2></div>
+      <div class="sec-head" data-r><p class="label">Experience</p><h2>Where I've worked</h2></div>
       <div class="timeline">
-        <div class="tl"><span class="when">Apr 2025 – now</span><div><h3>Odoo <small>IT Business Analyst / Functional Consultant</small></h3><p>End-to-end ERP implementations and upgrades across distribution, pharma, garment, F&amp;B and more. I also mentor new Odoo partners on implementation methodology.</p></div></div>
-        <div class="tl"><span class="when">Nov 2023 – Apr 2025</span><div><h3>Evermos <small>Associate Product Manager</small></h3><p>CRM and transaction features for a reseller commerce platform: shipping subsidy, gamified sharing, direct discounts.</p></div></div>
-        <div class="tl"><span class="when">Nov 2021 – Oct 2023</span><div><h3>Pinhome <small>Associate PM, previously PM Intern</small></h3><p>Home Service app: order add-ons, new services, virtual-account payment, in-app tipping.</p></div></div>
-        <div class="tl"><span class="when">Apr – Sep 2021</span><div><h3>Telkom Indonesia <small>Software Documentation Engineer Intern</small></h3><p>Business process analysis, BPMN and UML models, API documentation.</p></div></div>
-        <div class="tl"><span class="when">2018 – 2022</span><div><h3>Institut Teknologi Bandung <small>B.Eng. Information System &amp; Technology</small></h3><p>GPA 3.53. Enterprise architecture project with TOGAF for a food-processing company.</p></div></div>
+        <div class="tl" data-r><span class="when">Apr 2025 – now</span><div><h3>Business Analyst <small>Odoo · Tangerang</small></h3>
+          <ul><li>Lead end-to-end Odoo ERP implementations for diverse industries, from business process analysis to production deployment: 30+ projects, including partner implementations.</li><li>Optimize Odoo configurations to streamline business processes.</li><li>Mentor new Odoo partners on Odoo ERP and implementation methodology.</li></ul></div></div>
+        <div class="tl" data-r><span class="when">Nov 2023 – Apr 2025</span><div><h3>Associate Product Manager <small>Evermos · Bandung</small></h3>
+          <ul><li>Led a cross-functional team building CRM and transaction features, managing timelines and releases with metrics monitoring.</li><li>Shipping Subsidy Program: 2× active resellers and GMV growth outside Java.</li><li>Progress-bar gamification: +20% reseller shares.</li></ul></div></div>
+        <div class="tl" data-r><span class="when">Jul 2022 – Oct 2023</span><div><h3>Associate Product Manager <small>Pinhome · Jakarta</small></h3>
+          <ul><li>Launched add-ons for Home Service orders (~15% higher average GTV) and new Deep Cleaning and Glam services (~400 completed orders a month).</li><li>Owned features from research and benchmarking to PRD, agile delivery and metrics.</li></ul></div></div>
+        <div class="tl" data-r><span class="when">Nov 2021 – Jul 2022</span><div><h3>Product Management Intern <small>Pinhome</small></h3>
+          <ul><li>Launched virtual-account payment for home service transactions (~45% adoption) and supported the tip-for-service-partner feature.</li></ul></div></div>
+        <div class="tl" data-r><span class="when">Aug – Sep 2021</span><div><h3>Product Management Awardee <small>YLabs Bootcamp</small></h3>
+          <ul><li>Worked as product manager in a team building the MVP of a web and mobile event-organizer app.</li></ul></div></div>
+        <div class="tl" data-r><span class="when">Apr – Sep 2021</span><div><h3>Software Documentation Engineer Intern <small>Telkom Indonesia</small></h3>
+          <ul><li>Business process and system analysis, BPMN, UML and API documentation. Completed the PMMB program with a "Sangat Memuaskan" (excellent) result.</li></ul></div></div>
+      </div>
+
+      <div class="edu" data-r>
+        <p class="label">Education</p>
+        <div class="tl"><span class="when">2018 – 2022</span><div><h3>Institut Teknologi Bandung <small>B.Eng. Information System &amp; Technology</small></h3><p>GPA 3.53 / 4.00</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TOOLKIT ============ -->
-  <section class="sec tight" id="toolkit">
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="sec" id="certifications">
     <div class="wrap">
-      <div class="sec-head"><p class="label">Toolkit</p><h2>What I work with</h2></div>
+      <div class="sec-head" data-r><p class="label">Licenses &amp; certifications</p><h2>Certified, and verifiable.</h2></div>
+
+      <div class="odoo-certs">
+        <article class="oc" data-r>
+          <div class="seal">19</div>
+          <div><h3>Odoo 19 Functional Certification</h3><p>Odoo · Issued Apr 2026 · Credential ID 0001082307</p>
+          <a href="https://www.odoo.com/slides/odoo-19-functional-certification-502" target="_blank" rel="noopener">About this certification ↗</a></div>
+        </article>
+        <article class="oc" data-r>
+          <div class="seal">18</div>
+          <div><h3>Odoo 18 Functional Certification</h3><p>Odoo · Issued Apr 2025 · Credential ID 0000620774</p>
+          <a href="https://www.odoo.com/slides/odoo-18-functional-certification-442" target="_blank" rel="noopener">About this certification ↗</a></div>
+        </article>
+      </div>
+
+      <div class="certs">
+        <a class="cert" data-r href="https://courses.cognitiveclass.ai/certificates/485dddbe9d7340d997068f596f584489" target="_blank" rel="noopener"><img src="cert-ml.webp" alt="Machine Learning with Python certificate" loading="lazy" width="560" height="342"><b>Machine Learning with Python</b><span>Cognitive Class (IBM) · Dec 2020 · Verify ↗</span></a>
+        <a class="cert" data-r href="https://courses.cognitiveclass.ai/certificates/8ac458b52a1d486fa3ce37fc154fee9b" target="_blank" rel="noopener"><img src="cert-da.webp" alt="Data Analysis with Python certificate" loading="lazy" width="560" height="342"><b>Data Analysis with Python</b><span>Cognitive Class (IBM) · Nov 2020 · Verify ↗</span></a>
+        <a class="cert" data-r href="https://courses.cognitiveclass.ai/certificates/d485e0d529de4a228d4df20435534676" target="_blank" rel="noopener"><img src="cert-dv.webp" alt="Data Visualization with Python certificate" loading="lazy" width="560" height="342"><b>Data Visualization with Python</b><span>Cognitive Class (IBM) · Nov 2020 · Verify ↗</span></a>
+        <div class="cert" data-r><img src="cert-telkom.webp" alt="Telkom Indonesia PMMB internship certificate" loading="lazy" width="560" height="387"><b>PMMB Internship, Telkom Indonesia</b><span>Apr – Sep 2021 · Result: Sangat Memuaskan</span></div>
+        <div class="cert" data-r><img src="cert-ylabs.webp" alt="YLabs Bootcamp certificate" loading="lazy" width="560" height="395"><b>YLabs Bootcamp</b><span>PT YLabs Inovasi Indonesia · Aug – Sep 2021</span></div>
+        <a class="cert" data-r href="https://progate.com/course_certificate/65878689qu3ufh" target="_blank" rel="noopener"><img src="cert-sql.webp" alt="Progate SQL course certificate" loading="lazy" width="560" height="395"><b>SQL Course</b><span>Progate · Jun 2021 · Verify ↗</span></a>
+        <a class="cert" data-r href="https://progate.com/course_certificate/80042be6qup97u" target="_blank" rel="noopener"><img src="cert-py.webp" alt="Progate Python course certificate" loading="lazy" width="560" height="395"><b>Python Course</b><span>Progate · Jun 2021 · Verify ↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="sec tight" id="skills">
+    <div class="wrap">
+      <div class="sec-head" data-r><p class="label">Skills &amp; tools</p><h2>What I work with</h2></div>
       <div class="kit">
-        <div><h3>Business analysis</h3><ul><li>Fit-gap</li><li>BRD / FSD</li><li>BPMN</li><li>UML</li><li>UAT</li><li>Change management</li></ul></div>
-        <div><h3>ERP</h3><ul><li>Odoo 16–20</li><li>Sales &amp; Purchase</li><li>Inventory</li><li>Accounting</li><li>Manufacturing</li><li>Studio</li><li>QWeb reports</li></ul></div>
-        <div><h3>Product &amp; data</h3><ul><li>PRD</li><li>Roadmapping</li><li>SQL</li><li>Tableau</li><li>Metabase</li><li>Data Studio</li></ul></div>
-        <div><h3>Build &amp; AI</h3><ul><li>Python (basic)</li><li>Git</li><li>Figma</li><li>Claude workflows</li><li>Multi-agent setups</li></ul></div>
+        <div data-r><h3>Business analysis</h3><ul><li>Fit-gap</li><li>BRD / FSD</li><li>BPMN</li><li>UML</li><li>UAT</li><li>Change management</li></ul></div>
+        <div data-r><h3>ERP · Odoo</h3><ul><li>Sales &amp; Purchase</li><li>Inventory</li><li>Accounting</li><li>Manufacturing</li><li>Studio</li><li>QWeb reports</li><li>Upgrades</li></ul></div>
+        <div data-r><h3>Product &amp; project</h3><ul><li>Product management</li><li>PRD &amp; roadmap</li><li>Agile / Scrum</li><li>Jira</li><li>Stakeholder alignment</li></ul></div>
+        <div data-r><h3>Data &amp; build</h3><ul><li>SQL</li><li>Python</li><li>Tableau</li><li>Metabase</li><li>Figma</li><li>AI workflows</li></ul></div>
       </div>
     </div>
   </section>
@@ -155,12 +378,12 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <p class="label light">Contact</p>
-      <h2>Need an analyst who has shipped both <em>ERP and product?</em></h2>
-      <div class="c-row">
+      <h2>Ready to digitalize the way your business <em>actually works?</em></h2>
+      <div class="cta-row">
         <span class="email" id="email">ihzamuhamad19@gmail.com</span>
         <button class="btn light" type="button" id="copy">Copy email</button>
-        <a class="btn ghost" href="https://www.linkedin.com/in/muhamadihza" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="https://medium.com/@ihzamuhamad19" target="_blank" rel="noopener">Medium</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/muhamadihza" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn ghost" href="https://medium.com/@ihzamuhamad19" target="_blank" rel="noopener">Medium ↗</a>
       </div>
       <p class="foot">© 2026 Muhamad Ihza Faida Akbar · Bandung, Indonesia</p>
     </div>
@@ -169,6 +392,130 @@
 
 <div class="toast" id="toast" role="status" hidden></div>
 <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js" crossorigin="anonymous"></script>
-<script src="script.js?v=5"></script>
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* copy email */
+  var toast = function (m) {
+    var el = $('#toast'); el.textContent = m; el.hidden = false;
+    clearTimeout(toast.t); toast.t = setTimeout(function () { el.hidden = true; }, 2200);
+  };
+  $('#copy').addEventListener('click', function () {
+    var txt = $('#email').textContent;
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { toast('Email copied'); }, function () { toast('Select the email and press Ctrl+C'); });
+    else toast('Select the email and press Ctrl+C');
+  });
+
+  /* scroll progress */
+  var bar = $('#progress');
+  function onScroll() {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  if (reduce) return;
+  document.documentElement.classList.add('js');
+
+  /* reveal on scroll, staggered within each group */
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target, sib = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.style.transitionDelay = Math.min(sib, 6) * 70 + 'ms';
+      el.classList.add('in'); io.unobserve(el);
+      $$('[data-count]', el).forEach(count);
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  $$('[data-r]').forEach(function (el) { io.observe(el); });
+
+  function count(el) {
+    var end = +el.dataset.count, t0 = performance.now(), dur = 1200;
+    (function tick(now) {
+      var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(end * e);
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  /* ---------- hero 3D: six ERP "modules" that assemble on load ---------- */
+  var canvas = $('#gl'), box = canvas && canvas.parentNode;
+  if (!canvas || !window.THREE) return;
+  try {
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.75));
+    renderer.setClearColor(0, 0);
+    var scene = new THREE.Scene();
+    var cam = new THREE.PerspectiveCamera(30, 1, .1, 100); cam.position.set(0, 0, 13);
+    scene.add(new THREE.AmbientLight(0xffffff, .85));
+    var dl = new THREE.DirectionalLight(0xffffff, 1.4); dl.position.set(4, 6, 8); scene.add(dl);
+    var fl = new THREE.DirectionalLight(0x4fc8a4, .5); fl.position.set(-6, -3, 4); scene.add(fl);
+    var group = new THREE.Group(); scene.add(group);
+
+    var COLORS = [0x0e6e55, 0x0f1a16, 0xffffff, 0xe2a84f, 0x4fc8a4, 0x16805f];
+    var DEPTH = [.55, .9, .6, .8, .5, 1.0];
+    var rnd = (function (s) { return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; })(11);
+    var tiles = [];
+    for (var i = 0; i < 6; i++) {
+      var col = i % 2, row = Math.floor(i / 2);              // 2 x 3 tower
+      var g = new THREE.Group();
+      var mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshStandardMaterial({ color: COLORS[i], roughness: .5, metalness: .05 }));
+      mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)), new THREE.LineBasicMaterial({ color: 0x0f1a16, transparent: true, opacity: .28 })));
+      g.add(mesh);
+      var bm = new THREE.MeshBasicMaterial({ color: (i === 2 || i === 3 || i === 4) ? 0x0f1a16 : 0xf4f2ec, transparent: true, opacity: .85 });
+      var b1 = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), bm), b2 = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), bm);
+      g.add(b1); g.add(b2); group.add(g);
+      var w = 1.35, h = 1.0, d = DEPTH[i];
+      mesh.scale.set(w, h, d);
+      b1.position.set(-w / 2 + .16 + .4, h / 2 - .18, d / 2 + .003); b1.scale.set(.8, .08, 1);
+      b2.position.set(-w / 2 + .16 + .25, h / 2 - .33, d / 2 + .003); b2.scale.set(.5, .06, 1);
+      tiles.push({
+        g: g,
+        home: new THREE.Vector3((col - .5) * 1.45, (1 - row) * 1.1, (d - 1) / 2),
+        from: new THREE.Vector3((rnd() - .5) * 7, (rnd() - .5) * 6, (rnd() - .9) * 4),
+        rot: new THREE.Vector3((rnd() - .5) * 4, (rnd() - .5) * 4, (rnd() - .5) * 3),
+        a: 0, v: 0, delay: 250 + i * 140
+      });
+    }
+
+    var mx = 0, my = 0, tx = 0, ty = 0;
+    addEventListener('mousemove', function (e) { tx = (e.clientX / innerWidth - .5) * 2; ty = (e.clientY / innerHeight - .5) * 2; });
+
+    function size() {
+      var r = box.getBoundingClientRect();
+      renderer.setSize(r.width, r.height, false);
+      cam.aspect = r.width / r.height; cam.updateProjectionMatrix();
+    }
+    addEventListener('resize', size); size();
+
+    var visible = true;
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(box);
+
+    var t0 = performance.now(), last = t0;
+    (function frame(now) {
+      requestAnimationFrame(frame);
+      var dt = Math.min(.033, (now - last) / 1000); last = now;
+      if (!visible) return;
+      mx += (tx - mx) * .06; my += (ty - my) * .06;
+      var t = (now - t0) / 1000;
+      tiles.forEach(function (tl) {
+        var target = now - t0 > tl.delay ? 1 : 0;           // spring: overshoot, then settle
+        tl.v += (120 * (target - tl.a) - 11 * tl.v) * dt; tl.a += tl.v * dt;
+        var a = tl.a, r = 1 - a;
+        tl.g.position.set(tl.from.x + (tl.home.x - tl.from.x) * a, tl.from.y + (tl.home.y - tl.from.y) * a, tl.from.z + (tl.home.z - tl.from.z) * a);
+        tl.g.rotation.set(tl.rot.x * r, tl.rot.y * r, tl.rot.z * r);
+      });
+      group.rotation.y = -.45 + Math.sin(t * .45) * .2 + mx * .35;
+      group.rotation.x = -.18 + Math.cos(t * .35) * .05 + my * .15;
+      group.position.y = Math.sin(t * .8) * .08;
+      renderer.render(scene, cam);
+    })(t0);
+  } catch (e) { canvas.style.display = 'none'; }
+})();
+
+</script>
 </body>
 </html>
