@@ -2,230 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ihza Akbar — IT Business Analyst & Odoo Consultant</title>
-<meta name="description" content="Muhamad Ihza Faida Akbar — IT Business Analyst and ERP (Odoo) functional consultant, former product manager.">
-<meta property="og:title" content="Ihza Akbar — IT Business Analyst & Odoo Consultant">
-<meta property="og:description" content="I turn how a business actually works into systems it can run on.">
-<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Muhamad Ihza — IT Business Analyst & Odoo Consultant</title>
+<meta name="description" content="Muhamad Ihza Faida Akbar — IT Business Analyst and Odoo functional consultant, supporting implementations from A to Z across industries. Former product manager.">
+<meta property="og:title" content="Muhamad Ihza — IT Business Analyst & Odoo Consultant">
+<meta property="og:description" content="I help businesses run on Odoo, from the first workshop to go-live. Before that, I shipped product.">
+<meta name="theme-color" content="#f4f2ec">
+<link rel="preload" as="image" href="ihza.webp?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=5">
 </head>
 <body>
 
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="flood" aria-hidden="true"></div>
 <div class="progress" id="progress"></div>
+
 <header class="nav" id="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="#top">Ihza Akbar<span>.</span></a>
-    <nav aria-label="Main">
-      <a href="#work">Work</a>
-      <a href="#method" class="hide-sm">Method</a>
-      <a href="#experience" class="hide-sm">Experience</a>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+  <a class="brand" href="#top">Muhamad Ihza<span>.</span></a>
+  <nav aria-label="Main">
+    <a href="#journey">A–Z</a>
+    <a href="#product">Product</a>
+    <a href="#experience" class="hide-sm">Experience</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </nav>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero container">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow" data-in><span class="dot"></span>Available · Bandung, Indonesia</p>
-        <h1 id="h1">I turn how a business <em>actually works</em> into systems it can run on.</h1>
-        <p class="lede" data-in>I'm Ihza, an IT Business Analyst and Odoo functional consultant. I run ERP implementations from the first discovery workshop to go-live. Before that, three years shipping product at Evermos and Pinhome. I sit between operations and engineering so both sides end up with the same thing.</p>
-        <div class="cta-row" data-in>
-          <a class="btn primary magnetic" href="#work">See my work</a>
-          <a class="btn magnetic" href="#contact">Get in touch</a>
+  <!-- ============ HERO: layers split into 3D on scroll ============ -->
+  <section class="pin hero-pin" id="hero">
+    <div class="stage hero-stage">
+      <div class="scene">
+        <div class="stack" id="stack">
+          <div class="layer l-plate">
+            <span class="tag tag-a">01 · Odoo ERP</span>
+          </div>
+          <div class="layer l-type">
+            <h1 aria-label="Muhamad Ihza"><span>MUHAMAD</span><span class="g">IHZA</span></h1>
+            <span class="tag tag-b">02 · Business analysis</span>
+          </div>
+          <div class="layer l-ui" aria-hidden="true">
+            <div class="ui-bar"><i></i><i></i><i></i><b>Implementation</b></div>
+            <ul class="ui-rows">
+              <li><span>Discovery</span><em style="--w:100%"></em></li>
+              <li><span>Fit-gap</span><em style="--w:100%"></em></li>
+              <li><span>Configure</span><em style="--w:100%"></em></li>
+              <li><span>UAT</span><em style="--w:72%"></em></li>
+              <li><span>Go-live</span><em style="--w:38%"></em></li>
+            </ul>
+            <span class="tag tag-c">03 · Product thinking</span>
+          </div>
         </div>
       </div>
-      <div class="hero-photo" id="photo" aria-hidden="false">
-        <div class="blob" id="blob"></div>
-        <img id="me" src="ihza.webp?v=3" width="379" height="633" alt="Portrait of Muhamad Ihza Faida Akbar" fetchpriority="high">
-        <div class="chip chip-a" data-chip>Odoo 16 → 20</div>
-        <div class="chip chip-b" data-chip>BA · ERP · Product</div>
+
+      <div class="hero-meta" id="heroMeta">
+        <div class="who">
+          <div class="avatar" role="img" aria-label="Portrait of Muhamad Ihza"></div>
+          <p class="roles"><b>IT Business Analyst</b> · Odoo Functional Consultant<br><span>Former Product Manager · Bandung, ID</span></p>
+        </div>
+        <p class="lede">I support businesses on Odoo from A to Z, from the first workshop to go-live, across very different industries.</p>
+      </div>
+      <p class="cue" id="cue"><span></span>Scroll</p>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY: A to Z, object assembles ============ -->
+  <section class="pin journey-pin" id="journey">
+    <div class="stage j-stage">
+      <div class="j-wrap">
+        <p class="label">From A to Z</p>
+        <h2>One person across the whole implementation, <em>start to finish.</em></h2>
+        <ol class="j-steps" id="jSteps">
+          <li class="on"><div class="hd"><span class="n">01</span><b>Discovery</b></div><div class="dd"><p>Workshops by function to separate real needs from old habits, then map how the business actually runs.</p></div></li>
+          <li><div class="hd"><span class="n">02</span><b>Fit-gap</b></div><div class="dd"><p>Standard first. Customize only when it pays for itself, and say so when it doesn't.</p></div></li>
+          <li><div class="hd"><span class="n">03</span><b>Configure</b></div><div class="dd"><p>Set up modules, workflows and documents so the system matches the process, not the other way around.</p></div></li>
+          <li><div class="hd"><span class="n">04</span><b>Migrate</b></div><div class="dd"><p>Clean master data with a change log, so every merge and rename can be explained later.</p></div></li>
+          <li><div class="hd"><span class="n">05</span><b>UAT</b></div><div class="dd"><p>Scenario-based testing per process, with evidence and a sign-off the client can stand behind.</p></div></li>
+          <li><div class="hd"><span class="n">06</span><b>Go-live</b></div><div class="dd"><p>Cutover, training and hypercare, until users stop needing me.</p></div></li>
+        </ol>
+      </div>
+      <div class="j-count"><b id="jNum">01</b> / 06</div>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRIES ============ -->
+  <section class="band" id="industries">
+    <p class="label light">Industries supported</p>
+    <div class="marquee" aria-label="Distribution, pharmaceutical, garment and fashion, food and beverage, automotive and motorsport, manufacturing, e-commerce">
+      <div class="track">
+        <span>Distribution</span><i></i><span>Pharmaceutical</span><i></i><span>Garment &amp; fashion</span><i></i><span>Food &amp; beverage</span><i></i><span>Automotive &amp; motorsport</span><i></i><span>Manufacturing</span><i></i><span>E-commerce</span><i></i>
+        <span aria-hidden="true">Distribution</span><i></i><span aria-hidden="true">Pharmaceutical</span><i></i><span aria-hidden="true">Garment &amp; fashion</span><i></i><span aria-hidden="true">Food &amp; beverage</span><i></i><span aria-hidden="true">Automotive &amp; motorsport</span><i></i><span aria-hidden="true">Manufacturing</span><i></i><span aria-hidden="true">E-commerce</span><i></i>
       </div>
     </div>
-
-    <dl class="stats">
-      <div><dt><span data-count="5">5</span>–<span data-count="8">8</span></dt><dd>concurrent implementations</dd></div>
-      <div><dt><span data-count="16">16</span> → <span data-count="20">20</span></dt><dd>Odoo versions covered</dd></div>
-      <div><dt><span data-count="2">2</span>×</dt><dd>GMV outside Java (Evermos)</dd></div>
-      <div><dt>ITB</dt><dd>Information Systems</dd></div>
-    </dl>
+    <ul class="facts">
+      <li><b>5–8</b><span>implementations in parallel</span></li>
+      <li><b>16 → 20</b><span>Odoo versions covered</span></li>
+      <li><b>New &amp; upgrade</b><span>fresh builds and major version jumps</span></li>
+    </ul>
   </section>
 
-  <!-- LIFECYCLE -->
-  <section class="container lifecycle" aria-label="Implementation lifecycle">
-    <p class="label">What I own on every implementation</p>
-    <ol class="steps">
-      <li><span>01</span><b>Discovery</b><small>Workshops, as-is process maps</small></li>
-      <li><span>02</span><b>Fit-gap</b><small>Standard, Studio, automation or custom</small></li>
-      <li><span>03</span><b>Configure</b><small>Setup, inherited views, QWeb reports</small></li>
-      <li><span>04</span><b>Migrate</b><small>Data cleansing with change logs</small></li>
-      <li><span>05</span><b>UAT</b><small>Scenarios, evidence, sign-off</small></li>
-      <li><span>06</span><b>Go-live</b><small>Cutover and hypercare</small></li>
-    </ol>
-  </section>
-
-  <!-- WORK -->
-  <section id="work" class="container section">
-    <div class="sec-head">
-      <p class="label">Selected work</p>
-      <h2>Case files</h2>
-      <p class="sub">Client names are withheld. Each case shows the problem and what changed.</p>
-    </div>
-
-    <div class="cards">
-      <article class="card">
-        <div class="card-top"><span class="tag">Distribution</span><span class="status prog">In progress</span></div>
-        <h3>Multi-company rollout for a lubricant &amp; tyre distributor</h3>
-        <p>Head office plus branches across six implementation phases with intercompany flows. One kickoff questionnaire per function, mapped to an overview flow and detailed intercompany flows before any configuration.</p>
-        <p class="role"><b>Role</b> Discovery lead, flowcharts, phased plan, fit-gap, configuration</p>
-        <p class="result"><strong>6 phases</strong> tracked on one organizer, hypercare scheduled</p>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="tag">Pharmaceutical</span><span class="status prog">Go-live prep</span></div>
-        <h3>Go-live readiness for a pharmaceutical warehouse</h3>
-        <p>Duplicated contacts, inconsistent units of measure, and users who must only see their own warehouse. Deduplicated into parent/child hierarchies, standardized products and UoM, and scoped access per user.</p>
-        <p class="role"><b>Role</b> Data cleansing, access design</p>
-        <p class="result"><strong>Import-ready</strong> master data with a change log for every edit</p>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="tag">Garment</span><span class="status prog">Ongoing</span></div>
-        <h3>Garment maker with subcontract tailors and a Shopee storefront</h3>
-        <p>Production was tracked on paper and marketplace payouts could not be matched to orders. Turned the forms into Odoo fields and reports, and designed a per-order payout reconciliation with accounting.</p>
-        <p class="role"><b>Role</b> Process design, customization scoping</p>
-        <p class="result"><strong>Paper → ERP</strong> production and payouts traceable per order</p>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="tag">Upgrade</span><span class="status prog">Ongoing</span></div>
-        <h3>Major version upgrade, Odoo 16 → 19/20</h3>
-        <p>Years of customizations and reports that had to keep working after the jump. Built a structured tracker so every item has an owner and a test result.</p>
-        <p class="role"><b>Role</b> Upgrade planning, regression testing</p>
-        <p class="result"><strong>4-sheet tracker</strong> modules, customizations, reports, test results</p>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="tag">Product</span><span class="status live">Shipped</span></div>
-        <h3>Shipping Subsidy Program at Evermos</h3>
-        <p>Resellers outside Java were priced out by shipping costs. Designed and launched a subsidy that adjusts shipping cost by region, then monitored metrics after release.</p>
-        <p class="role"><b>Role</b> Associate Product Manager</p>
-        <p class="result"><strong>2×</strong> active resellers and GMV for orders outside Java</p>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="tag">Product</span><span class="status live">Shipped</span></div>
-        <h3>Order add-ons for Pinhome Home Service</h3>
-        <p>Low basket size per service order. Researched and launched add-ons in the order flow, plus two new services (Deep Cleaning, Glam).</p>
-        <p class="role"><b>Role</b> Associate Product Manager</p>
-        <p class="result"><strong>+15%</strong> average GTV per order, ~400 orders/month on new services</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- METHOD -->
-  <section id="method" class="container section">
-    <div class="sec-head">
-      <p class="label">Method</p>
-      <h2>How a project moves through my hands</h2>
-      <p class="sub">The same six stages every time, each with a deliverable the client can hold me to.</p>
-    </div>
-    <div class="method">
-      <div><span>01 · Discovery</span><h3>Ask before configuring</h3><p>Workshops by function to separate real needs from old habits.</p><small>→ Kickoff questionnaire, as-is flowcharts</small></div>
-      <div><span>02 · Fit-gap</span><h3>Standard first</h3><p>Every requirement lands in one bucket: standard, Studio, automation rule, custom module, or process change.</p><small>→ Fit-gap matrix, solution comparison</small></div>
-      <div><span>03 · Configure</span><h3>Upgrade-safe changes</h3><p>Customizations through inherited views and rebuilt reports, never by editing what already works.</p><small>→ Configured database, customization log</small></div>
-      <div><span>04 · Migrate</span><h3>Data people can trust</h3><p>Cleansing with a change log so finance can audit every merge and rename.</p><small>→ Import-ready files, review flags</small></div>
-      <div><span>05 · UAT</span><h3>Evidence over opinions</h3><p>Scenario-based tests per process with expected results and screenshots.</p><small>→ UAT scenarios, sign-off sheet</small></div>
-      <div><span>06 · Go-live</span><h3>Stay for the first month</h3><p>Cutover checklist and hypercare until users stop needing me.</p><small>→ Cutover plan, SOPs, training</small></div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="container section">
-    <div class="sec-head">
-      <p class="label">Experience</p>
-      <h2>Where I've worked</h2>
-    </div>
-    <div class="timeline">
-      <div class="tl"><span class="when">Apr 2025 – now</span><div><h3>Odoo <small>Business Analyst / Functional Consultant</small></h3><p>End-to-end ERP implementations for clients in distribution, pharma, garment and manufacturing. I also mentor new Odoo partners on implementation methodology.</p></div></div>
-      <div class="tl"><span class="when">Nov 2023 – Apr 2025</span><div><h3>Evermos <small>Associate Product Manager</small></h3><p>CRM and transaction features for a reseller commerce platform: shipping subsidy (2× GMV outside Java), gamified sharing (+20% reseller shares), direct discounts.</p></div></div>
-      <div class="tl"><span class="when">Nov 2021 – Oct 2023</span><div><h3>Pinhome <small>Associate PM, previously PM Intern</small></h3><p>Home Service app: order add-ons (+15% GTV), new services, virtual-account payment (~45% adoption), in-app tipping.</p></div></div>
-      <div class="tl"><span class="when">Apr – Sep 2021</span><div><h3>Telkom Indonesia <small>Software Documentation Engineer Intern</small></h3><p>Business process analysis, BPMN and UML models, API documentation.</p></div></div>
-      <div class="tl"><span class="when">2018 – 2022</span><div><h3>Institut Teknologi Bandung <small>B.Eng. Information System &amp; Technology</small></h3><p>GPA 3.53. Enterprise architecture project with TOGAF for a food-processing company.</p></div></div>
-    </div>
-  </section>
-
-  <!-- TOOLKIT -->
-  <section id="toolkit" class="container section">
-    <div class="sec-head">
-      <p class="label">Toolkit</p>
-      <h2>What I work with</h2>
-    </div>
-
-    <div class="orbit" aria-label="Tools I work with">
-      <div class="orbit-core"><b>Ihza</b><small>BA · ERP · Product</small></div>
-      <ul class="orbit-ring">
-        <li style="--i:0"><span>Odoo</span></li>
-        <li style="--i:1"><span>Studio</span></li>
-        <li style="--i:2"><span>QWeb</span></li>
-        <li style="--i:3"><span>BPMN</span></li>
-        <li style="--i:4"><span>SQL</span></li>
-        <li style="--i:5"><span>Figma</span></li>
-        <li style="--i:6"><span>Python</span></li>
-        <li style="--i:7"><span>Claude</span></li>
-      </ul>
-    </div>
-    <div class="kit">
-      <div><h3>Business analysis</h3><ul><li>Fit-gap</li><li>BRD / FSD</li><li>BPMN</li><li>UML</li><li>UAT</li><li>Change management</li></ul></div>
-      <div><h3>ERP</h3><ul><li>Odoo 16–20</li><li>Sales &amp; Purchase</li><li>Inventory</li><li>Accounting</li><li>Manufacturing</li><li>Studio</li><li>QWeb reports</li></ul></div>
-      <div><h3>Product &amp; data</h3><ul><li>PRD</li><li>Roadmapping</li><li>SQL</li><li>Tableau</li><li>Metabase</li><li>Data Studio</li></ul></div>
-      <div><h3>Build &amp; AI</h3><ul><li>Python (basic)</li><li>Git</li><li>Figma</li><li>Claude workflows</li><li>Multi-agent setups</li></ul></div>
-    </div>
-  </section>
-
-  <!-- SIDE PROJECT -->
-  <section class="container section">
-    <div class="side">
-      <div>
-        <p class="label">Side project · 2026</p>
-        <h2>An office of AI specialists</h2>
-        <p>A personal workspace of AI agents: an ERP tech lead, a functional BA, QA, product, design and marketing. They share one knowledge base, triage tasks, and hand work back for me to approve or revise. I use it daily to draft documentation, test ideas, and prepare client analysis faster.</p>
+  <!-- ============ PRODUCT: horizontal impact ============ -->
+  <section class="pin product-pin" id="product">
+    <div class="stage p-stage">
+      <div class="p-head">
+        <p class="label">Before ERP</p>
+        <h2>I also <em>shipped product.</em></h2>
+        <p class="sub">3+ years as Associate Product Manager at Evermos and Pinhome. It's why I scope ERP work around outcomes, not just features.</p>
+        <div class="dots" id="pDots"><i class="on"></i><i></i><i></i><i></i></div>
       </div>
-      <div class="agents">
-        <span><b>Kael</b>chief of staff</span>
-        <span><b>Shin</b>ERP tech</span>
-        <span><b>Noura</b>functional BA</span>
-        <span><b>Vera</b>QA</span>
-        <span><b>Ploo</b>product</span>
-        <span><b>Mira</b>design</span>
-        <span><b>Dex</b>engineering</span>
-        <span><b>Orin</b>AI systems</span>
+      <div class="p-view">
+        <div class="p-track" id="pTrack">
+          <article class="slide on"><p class="who">Evermos · Shipping subsidy</p><div class="big"><span data-val="2" data-pre="" data-suf="×">2×</span></div><p>GMV and active resellers for orders outside Java, after launching a subsidy that adjusts shipping cost by region.</p></article>
+          <article class="slide"><p class="who">Evermos · Gamified sharing</p><div class="big"><span data-val="20" data-pre="+" data-suf="%">+20%</span></div><p>More shares per reseller, from a gamified sharing feature alongside direct discounts for resellers.</p></article>
+          <article class="slide"><p class="who">Pinhome · Order add-ons</p><div class="big"><span data-val="15" data-pre="+" data-suf="%">+15%</span></div><p>Average GTV per order from add-ons in the order flow. Two new services, Deep Cleaning and Glam, reached about 400 orders a month.</p></article>
+          <article class="slide"><p class="who">Pinhome · Payments</p><div class="big"><span data-val="45" data-pre="~" data-suf="%">~45%</span></div><p>Adoption of virtual-account payment, shipped together with in-app tipping for service partners.</p></article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="container contact">
-    <p class="label">Contact</p>
-    <h2>Looking for an IT business analyst who has shipped both ERP and product?</h2>
-    <div class="cta-row">
-      <span class="email" id="email">ihzamuhamad19@gmail.com</span>
-      <button class="btn primary" type="button" id="copy">Copy email</button>
-      <a class="btn" href="https://www.linkedin.com/in/muhamadihza" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://medium.com/@ihzamuhamad19" target="_blank" rel="noopener">Medium</a>
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="sec-head"><p class="label">Experience</p><h2>Where I've worked</h2></div>
+      <div class="timeline">
+        <div class="tl"><span class="when">Apr 2025 – now</span><div><h3>Odoo <small>IT Business Analyst / Functional Consultant</small></h3><p>End-to-end ERP implementations and upgrades across distribution, pharma, garment, F&amp;B and more. I also mentor new Odoo partners on implementation methodology.</p></div></div>
+        <div class="tl"><span class="when">Nov 2023 – Apr 2025</span><div><h3>Evermos <small>Associate Product Manager</small></h3><p>CRM and transaction features for a reseller commerce platform: shipping subsidy, gamified sharing, direct discounts.</p></div></div>
+        <div class="tl"><span class="when">Nov 2021 – Oct 2023</span><div><h3>Pinhome <small>Associate PM, previously PM Intern</small></h3><p>Home Service app: order add-ons, new services, virtual-account payment, in-app tipping.</p></div></div>
+        <div class="tl"><span class="when">Apr – Sep 2021</span><div><h3>Telkom Indonesia <small>Software Documentation Engineer Intern</small></h3><p>Business process analysis, BPMN and UML models, API documentation.</p></div></div>
+        <div class="tl"><span class="when">2018 – 2022</span><div><h3>Institut Teknologi Bandung <small>B.Eng. Information System &amp; Technology</small></h3><p>GPA 3.53. Enterprise architecture project with TOGAF for a food-processing company.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOOLKIT ============ -->
+  <section class="sec tight" id="toolkit">
+    <div class="wrap">
+      <div class="sec-head"><p class="label">Toolkit</p><h2>What I work with</h2></div>
+      <div class="kit">
+        <div><h3>Business analysis</h3><ul><li>Fit-gap</li><li>BRD / FSD</li><li>BPMN</li><li>UML</li><li>UAT</li><li>Change management</li></ul></div>
+        <div><h3>ERP</h3><ul><li>Odoo 16–20</li><li>Sales &amp; Purchase</li><li>Inventory</li><li>Accounting</li><li>Manufacturing</li><li>Studio</li><li>QWeb reports</li></ul></div>
+        <div><h3>Product &amp; data</h3><ul><li>PRD</li><li>Roadmapping</li><li>SQL</li><li>Tableau</li><li>Metabase</li><li>Data Studio</li></ul></div>
+        <div><h3>Build &amp; AI</h3><ul><li>Python (basic)</li><li>Git</li><li>Figma</li><li>Claude workflows</li><li>Multi-agent setups</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="label light">Contact</p>
+      <h2>Need an analyst who has shipped both <em>ERP and product?</em></h2>
+      <div class="c-row">
+        <span class="email" id="email">ihzamuhamad19@gmail.com</span>
+        <button class="btn light" type="button" id="copy">Copy email</button>
+        <a class="btn ghost" href="https://www.linkedin.com/in/muhamadihza" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://medium.com/@ihzamuhamad19" target="_blank" rel="noopener">Medium</a>
+      </div>
+      <p class="foot">© 2026 Muhamad Ihza Faida Akbar · Bandung, Indonesia</p>
     </div>
   </section>
 </main>
 
-<footer class="container foot">© 2026 Muhamad Ihza Faida Akbar · Bandung, Indonesia</footer>
 <div class="toast" id="toast" role="status" hidden></div>
-<script src="script.js?v=3"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js" crossorigin="anonymous"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
