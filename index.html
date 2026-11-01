@@ -15,7 +15,8 @@
 </head>
 <body>
 
-<header class="nav">
+<div class="progress" id="progress"></div>
+<header class="nav" id="nav">
   <div class="container nav-inner">
     <a class="brand" href="#top">Ihza Akbar<span>.</span></a>
     <nav aria-label="Main">
@@ -31,18 +32,28 @@
 
   <!-- HERO -->
   <section class="hero container">
-    <p class="eyebrow"><span class="dot"></span>Available · Bandung, Indonesia</p>
-    <h1>I turn how a business <em>actually works</em> into systems it can run on.</h1>
-    <p class="lede">I'm Ihza, an IT Business Analyst and Odoo functional consultant. I run ERP implementations from the first discovery workshop to go-live. Before that, three years shipping product at Evermos and Pinhome. I sit between operations and engineering so both sides end up with the same thing.</p>
-    <div class="cta-row">
-      <a class="btn primary" href="#work">See my work</a>
-      <a class="btn" href="#contact">Get in touch</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-in><span class="dot"></span>Available · Bandung, Indonesia</p>
+        <h1 id="h1">I turn how a business <em>actually works</em> into systems it can run on.</h1>
+        <p class="lede" data-in>I'm Ihza, an IT Business Analyst and Odoo functional consultant. I run ERP implementations from the first discovery workshop to go-live. Before that, three years shipping product at Evermos and Pinhome. I sit between operations and engineering so both sides end up with the same thing.</p>
+        <div class="cta-row" data-in>
+          <a class="btn primary magnetic" href="#work">See my work</a>
+          <a class="btn magnetic" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo" id="photo" aria-hidden="false">
+        <div class="blob" id="blob"></div>
+        <img id="me" src="ihza.webp" width="379" height="633" alt="Portrait of Muhamad Ihza Faida Akbar" fetchpriority="high">
+        <div class="chip chip-a" data-chip>Odoo 16 → 20</div>
+        <div class="chip chip-b" data-chip>BA · ERP · Product</div>
+      </div>
     </div>
 
     <dl class="stats">
-      <div><dt>5–8</dt><dd>concurrent implementations</dd></div>
-      <div><dt>16 → 20</dt><dd>Odoo versions covered</dd></div>
-      <div><dt>2×</dt><dd>GMV outside Java (Evermos)</dd></div>
+      <div><dt><span data-count="5">5</span>–<span data-count="8">8</span></dt><dd>concurrent implementations</dd></div>
+      <div><dt><span data-count="16">16</span> → <span data-count="20">20</span></dt><dd>Odoo versions covered</dd></div>
+      <div><dt><span data-count="2">2</span>×</dt><dd>GMV outside Java (Evermos)</dd></div>
       <div><dt>ITB</dt><dd>Information Systems</dd></div>
     </dl>
   </section>
