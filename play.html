@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Play with the process — Muhamad Ihza</title>
-<meta name="description" content="Two small exercises from real implementation work: sort requirements into Standard or Custom, and catch bugs in a mock sales order before go-live.">
+<title>Play · Mini Arcade — Muhamad Ihza</title>
+<meta name="description" content="Break-time games on Muhamad Ihza's portfolio: 5-letter daily word puzzle, 1-button pixel-art sprint runner, and interactive gravity orbs sandbox.">
 <meta name="theme-color" content="#f4f2ec">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="play.css">
 </head>
 <body>
@@ -24,110 +24,165 @@
 
 <main id="top">
   <section class="intro">
-    <div class="wrap">
-      <span class="label">Play</span>
-      <h1>Play with the <em>process</em></h1>
-      <p>Two small exercises from real implementation work.</p>
-      <span class="example-tag">Example scenario · fictional, not client data</span>
-    </div>
-  </section>
-
-  <!-- 1. Fit-gap sorter -->
-  <section class="game" id="fitgap" aria-labelledby="fg-title">
-    <div class="wrap game-grid">
-      <div class="game-play">
-        <div class="panel" id="fg-panel">
-          <div class="progress-line"><span id="fg-count">1 / 6</span><span>Fit-gap</span></div>
-          <div id="fg-game">
-            <div class="stage" id="fg-stage">
-              <div class="rcard" id="fg-card" tabindex="0" role="group" aria-label="Requirement card" aria-describedby="fg-hint">
-                <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-                <p class="req" id="fg-req"></p>
-                <p class="hint" id="fg-hint">Drag, or use ← →</p>
-              </div>
-            </div>
-            <div class="zones" id="fg-zones">
-              <button type="button" class="zone" data-pick="standard"><strong>Standard</strong><small>←</small></button>
-              <button type="button" class="zone" data-pick="custom"><strong>Custom</strong><small>→</small></button>
-            </div>
-            <div class="feedback" id="fg-feedback" aria-live="polite"></div>
-          </div>
-          <div class="result" id="fg-result" hidden>
-            <div class="score" id="fg-score"></div>
-            <p>4 of 6 fit Standard. Standard first; customize only when it pays.</p>
-            <div class="row">
-              <button type="button" class="btn primary" id="fg-again">Play again</button>
-              <a class="btn" href="index.html#services">See Services</a>
-            </div>
-          </div>
+    <div class="wrap intro-bar">
+      <div class="intro-copy">
+        <div class="meta-row">
+          <span class="label">Arcade · Off-hours</span>
+          <span class="badge-live" id="fps-badge" title="Real-time fixed-step loop monitor">60 FPS · Canvas 2D</span>
         </div>
+        <h1>Take five. <em>Play</em> a round.</h1>
+        <p class="sub">Three fast break-time games built with vanilla Canvas, Web Audio, and tactile CSS motion. ~70% everyday words, ~30% shop-floor vocabulary.</p>
       </div>
-      <div class="game-copy">
-        <span class="label">01 · Fit-gap</span>
-        <h2 id="fg-title">Standard <em>first</em></h2>
-        <p>Every requirement is either covered by the standard product or it needs custom work. Sort six of them. The wrong calls cost nothing here. In a project they cost months.</p>
-        <p class="note">Example scenario. Requirements are fictional.</p>
+      <div class="intro-controls">
+        <button type="button" class="pill-btn" id="sound-toggle" aria-pressed="false" title="Toggle synthesized Web Audio sound effects">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="sound-label">Sound: Off</span>
+        </button>
+        <div class="mode-switch" role="tablist" aria-label="Jump to game">
+          <a class="chip active" href="#word-section">01 · Wordle</a>
+          <a class="chip" href="#runner-section">02 · Pixel Runner</a>
+          <a class="chip" href="#orbs-section">03 · Gravity Orbs</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. UAT bug-catcher -->
-  <section class="game" id="uat" aria-labelledby="uat-title">
-    <div class="wrap game-grid">
-      <div class="game-play">
-        <div class="panel">
-          <div class="timer" aria-hidden="true"><i id="uat-bar"></i></div>
-          <div class="timer-row"><span id="uat-time">30s</span><span id="uat-found-count">0 / 5 found</span></div>
-          <div class="controls">
-            <button type="button" class="btn primary" id="uat-start">Start UAT</button>
-            <button type="button" class="btn" id="uat-notimer">No timer</button>
-            <button type="button" class="btn" id="uat-finish" hidden>Finish now</button>
+  <!-- GAME 01: 5-LETTER WORD PUZZLE -->
+  <section class="arcade-sec" id="word-section" aria-labelledby="word-title">
+    <div class="wrap arcade-grid">
+      <div class="cabinet" id="word-cabinet">
+        <div class="cab-head">
+          <div class="cab-title-group">
+            <span class="cab-tag" id="word-mode-badge">Daily #1</span>
+            <span class="cab-tag tag-cat" id="word-cat-hint" title="Word bank mix: ~70% general, ~30% work/ERP">Mix: 70% General · 30% Work</span>
           </div>
-
-          <div class="so" id="uat-form" aria-label="Mock sales order form">
-            <div class="so-head">
-              <span class="ttl">Sales Order · SO-EXAMPLE</span>
-              <button type="button" class="chk" data-id="status" disabled><small>Status</small><span class="v">Done</span> <span class="fakebtn off" id="uat-confirm">Confirm</span></button>
-            </div>
-            <div class="fields">
-              <button type="button" class="chk" data-id="customer" disabled><small>Customer</small><span class="v">Example Customer Ltd.</span></button>
-              <button type="button" class="chk" data-id="odate" disabled><small>Order date</small><span class="v">2026-03-10</span></button>
-              <button type="button" class="chk" data-id="ddate" disabled><small>Delivery date</small><span class="v" data-good="2026-03-17" data-bad="2026-03-02">2026-03-17</span></button>
-              <button type="button" class="chk" data-id="discount" disabled><small>Discount</small><span class="v" data-good="0%" data-bad="120%">0%</span></button>
-            </div>
-            <div class="lines" role="group" aria-label="Order lines">
-              <button type="button" class="chk" data-id="l1" disabled><span class="v">Item A</span><span class="v mono">2 × 150</span><span class="v mono">300</span></button>
-              <button type="button" class="chk" data-id="l2" disabled><span class="v">Item B</span><span class="v mono">1 × 200</span><span class="v mono">200</span></button>
-            </div>
-            <div class="totals">
-              <button type="button" class="chk" data-id="tax" disabled><small>Tax</small><span class="v mono" data-good="55" data-bad="—">55</span></button>
-              <button type="button" class="chk" data-id="total" disabled><small>Total</small><span class="v mono" data-good="555" data-bad="505">555</span></button>
-            </div>
-          </div>
-
-          <p class="status" id="uat-status" aria-live="polite">Press Start. Bugs show up while the clock runs.</p>
-          <ul class="found" id="uat-found" aria-live="polite"></ul>
-          <div class="result" id="uat-result" hidden>
-            <div class="score" id="uat-score"></div>
-            <p id="uat-msg"></p>
-            <div class="row"><button type="button" class="btn primary" id="uat-again">Play again</button></div>
+          <div class="cab-stats" aria-label="Word game statistics">
+            <span>Streak <strong id="word-streak">0</strong></span>
+            <span>Won <strong id="word-won">0</strong></span>
+            <button type="button" class="btn-sm" id="word-random-btn">Random word</button>
+            <button type="button" class="btn-sm" id="word-daily-btn" hidden>Back to Daily</button>
           </div>
         </div>
+
+        <div class="board-stage" id="word-stage">
+          <canvas class="fx-canvas" id="word-fx-canvas" aria-hidden="true"></canvas>
+          <div class="word-board" id="word-board" role="grid" aria-label="5-letter word puzzle board, 6 rows of 5 tiles"></div>
+        </div>
+
+        <div class="word-banner" id="word-banner" role="status" aria-live="polite">
+          Type 5 letters and press Enter.
+        </div>
+
+        <div class="kb" id="word-kb" role="group" aria-label="On-screen keyboard"></div>
       </div>
-      <div class="game-copy">
-        <span class="label">02 · UAT</span>
-        <h2 id="uat-title">Find what's <em>wrong</em></h2>
-        <p>User acceptance testing is where a clean-looking form gets checked line by line. Tap or click the field that looks wrong. A wrong tap costs nothing.</p>
-        <p class="note">Example scenario. The sales order is fictional.</p>
+
+      <aside class="arcade-side">
+        <span class="label">01 · Daily Word</span>
+        <h2 id="word-title">Five letters, <em>six</em> shots.</h2>
+        <p>Guess the five-letter word in six tries. Most days it is an everyday English word; every few rounds a light work or ops term (<code>AUDIT</code>, <code>STOCK</code>, <code>QUOTE</code>, <code>SCOPE</code>) sneaks in.</p>
+        <ul class="legend" aria-label="Tile color guide">
+          <li><span class="sw sw-correct">A</span> <strong>Exact spot</strong> — right letter, right column.</li>
+          <li><span class="sw sw-present">U</span> <strong>Wrong spot</strong> — in the word, different column (duplicate letters counted accurately).</li>
+          <li><span class="sw sw-absent">X</span> <strong>Not in word</strong> — no remaining match.</li>
+        </ul>
+        <p class="side-note">Saved locally in your browser (<code>localStorage</code>) for streak and daily progress only.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- GAME 02: PIXEL ARCADE RUNNER -->
+  <section class="arcade-sec" id="runner-section" aria-labelledby="runner-title">
+    <div class="wrap arcade-grid">
+      <div class="cabinet" id="runner-cabinet">
+        <div class="cab-head">
+          <div class="cab-title-group">
+            <span class="cab-tag">128×96 Logical · Integer Scale</span>
+            <span class="cab-tag" id="runner-scale-tag">Scale 4×</span>
+          </div>
+          <div class="cab-stats" aria-label="Runner scores">
+            <span>Flags <strong id="runner-flags">0</strong></span>
+            <span>Score <strong id="runner-score">0000</strong></span>
+            <span>Best <strong id="runner-best">0000</strong></span>
+          </div>
+        </div>
+
+        <div class="pixel-viewport" id="runner-viewport">
+          <canvas id="runner-canvas" width="512" height="384" tabindex="0" role="application" aria-label="Sprint Runner pixel game. Press Space, Up Arrow, or tap to jump over bugs and collect Go-Live flags."></canvas>
+        </div>
+
+        <div class="runner-bar">
+          <button type="button" class="btn primary" id="runner-action-btn">Jump / Start (Space)</button>
+          <button type="button" class="btn" id="runner-restart-btn">Reset Run</button>
+          <span class="runner-status" id="runner-status" aria-live="polite">Press Space or Tap canvas to launch sprint.</span>
+        </div>
       </div>
+
+      <aside class="arcade-side">
+        <span class="label">02 · Pixel Arcade</span>
+        <h2 id="runner-title">Dodge bugs. Grab <em>go-live</em> flags.</h2>
+        <p>One button controls everything: tap or press <code>Space</code> / <code>↑</code> to jump. Hold slightly longer for a higher arc, or tap again mid-air for a double-jump boost.</p>
+        <div class="spec-box">
+          <div class="spec-row"><span>Resolution</span><code>128 × 96 px (integer blit)</code></div>
+          <div class="spec-row"><span>Timestep</span><code>Fixed 60 Hz + rAF</code></div>
+          <div class="spec-row"><span>Palette</span><code>24 locked hex colors</code></div>
+          <div class="spec-row"><span>Particles</span><code>128-slot zero-alloc pool</code></div>
+        </div>
+        <p class="side-note">Respects <code>prefers-reduced-motion</code> (disables screen shake and heavy particle bursts while keeping gameplay intact).</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- GAME 03: GRAVITY ORBS -->
+  <section class="arcade-sec" id="orbs-section" aria-labelledby="orbs-title">
+    <div class="wrap arcade-grid">
+      <div class="cabinet" id="orbs-cabinet">
+        <div class="cab-head">
+          <div class="cab-title-group">
+            <span class="cab-tag">Physics Sandbox</span>
+            <span class="cab-tag tag-cat" id="orbs-count-badge">24 Orbs</span>
+          </div>
+          <div class="cab-stats" aria-label="Orbs controls">
+            <button type="button" class="btn-sm" id="orbs-gravity-btn">Gravity: Normal</button>
+            <button type="button" class="btn-sm" id="orbs-spawn-btn">+ Add Orbs</button>
+            <button type="button" class="btn-sm" id="orbs-clear-btn">Reset</button>
+          </div>
+        </div>
+
+        <div class="pixel-viewport orbs-viewport" id="orbs-viewport">
+          <canvas id="orbs-canvas" width="512" height="320" tabindex="0" role="application" aria-label="Gravity Orbs physics playground. Click or tap to launch bouncing orbs with interactive gravity."></canvas>
+        </div>
+
+        <div class="runner-bar">
+          <span class="runner-status" id="orbs-status" aria-live="polite">Click or drag anywhere on the canvas to flick and spawn bouncy orbs.</span>
+        </div>
+      </div>
+
+      <aside class="arcade-side">
+        <span class="label">03 · Physics Playground</span>
+        <h2 id="orbs-title">Touch, fling, and watch them <em>bounce</em>.</h2>
+        <p>A pure 60fps Newtonian particle simulation. Move your mouse or drag your finger to attract and repel the orbs. Toggle gravity from downward earth pull to zero-g float.</p>
+        <div class="spec-box">
+          <div class="spec-row"><span>Engine</span><code>Euler integrator · Elastic restitution</code></div>
+          <div class="spec-row"><span>Interactions</span><code>Cursor gravity well · Wall bounces · SFX</code></div>
+          <div class="spec-row"><span>Palette</span><code>Token mint, amber, green, deep ink</code></div>
+        </div>
+        <p class="side-note">Respects <code>prefers-reduced-motion</code> with gentle damping.</p>
+      </aside>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">Example scenarios built for this page. Not client data.</div>
+  <div class="wrap footer-row">
+    <span>Built for fun on <a href="index.html">muhamadihza.github.io</a> · Vanilla HTML, CSS &amp; Canvas 2D.</span>
+    <a href="index.html#contact">Back to portfolio →</a>
+  </div>
 </footer>
 
+<script src="play-audio.js"></script>
+<script src="play-wordle.js"></script>
+<script src="play-runner.js"></script>
+<script src="play-orbs.js"></script>
 <script src="play.js"></script>
 </body>
 </html>
