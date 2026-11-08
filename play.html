@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Play with the process — Muhamad Ihza</title>
+<meta name="description" content="Two small exercises from real implementation work: sort requirements into Standard or Custom, and catch bugs in a mock sales order before go-live.">
+<meta name="theme-color" content="#f4f2ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="play.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="index.html">Muhamad Ihza<span>.</span></a>
+  <nav aria-label="Main">
+    <a href="index.html#services" class="hide-sm">Services</a>
+    <a href="index.html">Back</a>
+    <a href="#top" class="nav-cta" aria-current="page">Play</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="intro">
+    <div class="wrap">
+      <span class="label">Play</span>
+      <h1>Play with the <em>process</em></h1>
+      <p>Two small exercises from real implementation work.</p>
+      <span class="example-tag">Example scenario · fictional, not client data</span>
+    </div>
+  </section>
+
+  <!-- 1. Fit-gap sorter -->
+  <section class="game" id="fitgap" aria-labelledby="fg-title">
+    <div class="wrap game-grid">
+      <div class="game-play">
+        <div class="panel" id="fg-panel">
+          <div class="progress-line"><span id="fg-count">1 / 6</span><span>Fit-gap</span></div>
+          <div id="fg-game">
+            <div class="stage" id="fg-stage">
+              <div class="rcard" id="fg-card" tabindex="0" role="group" aria-label="Requirement card" aria-describedby="fg-hint">
+                <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                <p class="req" id="fg-req"></p>
+                <p class="hint" id="fg-hint">Drag, or use ← →</p>
+              </div>
+            </div>
+            <div class="zones" id="fg-zones">
+              <button type="button" class="zone" data-pick="standard"><strong>Standard</strong><small>←</small></button>
+              <button type="button" class="zone" data-pick="custom"><strong>Custom</strong><small>→</small></button>
+            </div>
+            <div class="feedback" id="fg-feedback" aria-live="polite"></div>
+          </div>
+          <div class="result" id="fg-result" hidden>
+            <div class="score" id="fg-score"></div>
+            <p>4 of 6 fit Standard. Standard first; customize only when it pays.</p>
+            <div class="row">
+              <button type="button" class="btn primary" id="fg-again">Play again</button>
+              <a class="btn" href="index.html#services">See Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="game-copy">
+        <span class="label">01 · Fit-gap</span>
+        <h2 id="fg-title">Standard <em>first</em></h2>
+        <p>Every requirement is either covered by the standard product or it needs custom work. Sort six of them. The wrong calls cost nothing here. In a project they cost months.</p>
+        <p class="note">Example scenario. Requirements are fictional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. UAT bug-catcher -->
+  <section class="game" id="uat" aria-labelledby="uat-title">
+    <div class="wrap game-grid">
+      <div class="game-play">
+        <div class="panel">
+          <div class="timer" aria-hidden="true"><i id="uat-bar"></i></div>
+          <div class="timer-row"><span id="uat-time">30s</span><span id="uat-found-count">0 / 5 found</span></div>
+          <div class="controls">
+            <button type="button" class="btn primary" id="uat-start">Start UAT</button>
+            <button type="button" class="btn" id="uat-notimer">No timer</button>
+            <button type="button" class="btn" id="uat-finish" hidden>Finish now</button>
+          </div>
+
+          <div class="so" id="uat-form" aria-label="Mock sales order form">
+            <div class="so-head">
+              <span class="ttl">Sales Order · SO-EXAMPLE</span>
+              <button type="button" class="chk" data-id="status" disabled><small>Status</small><span class="v">Done</span> <span class="fakebtn off" id="uat-confirm">Confirm</span></button>
+            </div>
+            <div class="fields">
+              <button type="button" class="chk" data-id="customer" disabled><small>Customer</small><span class="v">Example Customer Ltd.</span></button>
+              <button type="button" class="chk" data-id="odate" disabled><small>Order date</small><span class="v">2026-03-10</span></button>
+              <button type="button" class="chk" data-id="ddate" disabled><small>Delivery date</small><span class="v" data-good="2026-03-17" data-bad="2026-03-02">2026-03-17</span></button>
+              <button type="button" class="chk" data-id="discount" disabled><small>Discount</small><span class="v" data-good="0%" data-bad="120%">0%</span></button>
+            </div>
+            <div class="lines" role="group" aria-label="Order lines">
+              <button type="button" class="chk" data-id="l1" disabled><span class="v">Item A</span><span class="v mono">2 × 150</span><span class="v mono">300</span></button>
+              <button type="button" class="chk" data-id="l2" disabled><span class="v">Item B</span><span class="v mono">1 × 200</span><span class="v mono">200</span></button>
+            </div>
+            <div class="totals">
+              <button type="button" class="chk" data-id="tax" disabled><small>Tax</small><span class="v mono" data-good="55" data-bad="—">55</span></button>
+              <button type="button" class="chk" data-id="total" disabled><small>Total</small><span class="v mono" data-good="555" data-bad="505">555</span></button>
+            </div>
+          </div>
+
+          <p class="status" id="uat-status" aria-live="polite">Press Start. Bugs show up while the clock runs.</p>
+          <ul class="found" id="uat-found" aria-live="polite"></ul>
+          <div class="result" id="uat-result" hidden>
+            <div class="score" id="uat-score"></div>
+            <p id="uat-msg"></p>
+            <div class="row"><button type="button" class="btn primary" id="uat-again">Play again</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="game-copy">
+        <span class="label">02 · UAT</span>
+        <h2 id="uat-title">Find what's <em>wrong</em></h2>
+        <p>User acceptance testing is where a clean-looking form gets checked line by line. Tap or click the field that looks wrong. A wrong tap costs nothing.</p>
+        <p class="note">Example scenario. The sales order is fictional.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Example scenarios built for this page. Not client data.</div>
+</footer>
+
+<script src="play.js"></script>
+</body>
+</html>
